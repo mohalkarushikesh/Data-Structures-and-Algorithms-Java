@@ -1,6 +1,21 @@
-
-
 import java.util.*;
+
+// Quick sort : 
+//quick()
+//  if(end<=start) return; //base condition
+//  updated pivot=partition()
+//  quicksort(arr, start, pivot-1)
+//  quicksort(arr, pivot+1,end)
+//
+// recursion()
+// pivot = end
+// i = start - 1
+// for ( j to n)
+// if j < pivot
+//      i++
+//      swap arr[i],arr[j]
+// i++ // increase i 
+// swap pivot,arr[i]
 
 public class Main {
     public static void main(String[] args) {
