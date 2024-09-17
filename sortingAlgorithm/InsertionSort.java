@@ -1,4 +1,14 @@
 import java.util.*;
+
+// insertion sort 
+// for(1 to n)
+//      temp=arr[i]
+//      j=i-1
+//      while(j>=0 && arr[j]>temp)
+//          arr[j+1]=j
+//          j--
+//      arr[j+1]=temp // insert temp
+
 class InsertionSort{
 	public static void main(String[], args){
 		int arr[] = {32, 53, 32, 13, 65, 33, 77, 3, 8, 6};
@@ -13,7 +23,7 @@ class InsertionSort{
     		int j = i – 1; // initialize j to index in previous element
 	    	while(j>=0 && arr[j] > temp){ // shift ele in sorted order if they are > temp
 	            arr[j+1] = j;  // push j to j+1
-	            j--; // move next ele on left 
+	            j--; // move next ele on left/decrement j
             } 
             arr[j+1]=temp; // insert temp at correct postion
         }      

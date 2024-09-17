@@ -1,7 +1,13 @@
 import java.util.*;
 
 // selection sort : 
-
+// for(0 to n-1)
+//      current min
+//      for(i+1 to n) inner loop 
+//          fin min
+//          update min
+//      swap arr[i],arr[min]
+ 
 public class SelectionSort {
     public static void main(String[] args) {
       int arr[] = {9, 1, 8, 2, 7, 3, 6, 4, 5};
