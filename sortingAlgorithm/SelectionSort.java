@@ -1,5 +1,13 @@
 import java.util.*;
-
+/*
+Selection Sort
+Concept: Divide the list into a sorted and an unsorted region.
+Steps:
+Find the smallest element in the unsorted region.
+Swap it with the first unsorted element.
+Move the boundary between sorted and unsorted regions one element to the right.
+Visualization: Imagine selecting the smallest item from a list and moving it to the front.
+*/
 // selection sort : 
 // for(0 to n-1)
 //      current min
