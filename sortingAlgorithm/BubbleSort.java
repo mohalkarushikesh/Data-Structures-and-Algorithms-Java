@@ -1,5 +1,13 @@
 import java.util.*;
-
+/*
+Bubble Sort
+Concept: Repeatedly swap adjacent elements if they are in the wrong order.
+Steps:
+Compare each pair of adjacent elements.
+Swap them if they are in the wrong order.
+Repeat until the list is sorted.
+Visualization: Imagine bubbles rising to the surface, with the largest bubble (element) moving to the end in each pass.
+*/
 // Bubble sort : 
 // 1. check arr[j] > arr[j+1]
 // yes swap elements
