@@ -1,4 +1,13 @@
 import java.util.*;
+/*
+Insertion Sort
+Concept: Build the sorted array one item at a time.
+Steps:
+Start with the second element.
+Compare it with the elements before it and insert it into its correct position.
+Repeat for all elements.
+Visualization: Think of sorting a hand of playing cards by picking one card at a time and placing it in the correct position.
+*/
 
 // insertion sort 
 // for(1 to n)
