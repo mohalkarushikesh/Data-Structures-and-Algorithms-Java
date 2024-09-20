@@ -25,7 +25,7 @@ Visualization: Imagine picking a pivot and sorting elements around it, like orga
 // i++ // increase i 
 // swap pivot,arr[i]
 
-public class Main {
+public class QuickSort {
     public static void main(String[] args) {
       int arr[] = {4, 1, 55, 32, 44 ,776, 64, 77, 99};
       quicksort(arr, 0, arr.length-1);
