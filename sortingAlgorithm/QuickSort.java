@@ -1,5 +1,13 @@
 import java.util.*;
-
+/*
+Quick Sort
+Concept: Use a pivot to partition the list into smaller and larger elements.
+Steps:
+Choose a pivot element.
+Partition the list into elements less than the pivot and elements greater than the pivot.
+Recursively apply the same process to the sub-lists.
+Visualization: Imagine picking a pivot and sorting elements around it, like organizing books on a shelf by size.
+*/
 // Quick sort : 
 //quick()
 //  if(end<=start) return; //base condition
