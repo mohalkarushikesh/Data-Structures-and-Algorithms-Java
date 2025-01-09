@@ -13,7 +13,7 @@ public class SinglyLinkedList {
 		}
 	}
 
-	// method to insert new node
+	// method to insert new node based on index 
 	public static SinglyLinkedList insertAtPosition(SinglyLinkedList list, int index, int data) {
 		// create new node
 		Node new_node = new Node(data);
@@ -43,7 +43,7 @@ public class SinglyLinkedList {
 		return list;
 	}
 
-	// delete node
+	// delete node based on index
 	public static SinglyLinkedList deleteAtPosition(SinglyLinkedList list, int index) {
 		Node currNode = list.head, prev = null;
 
@@ -77,7 +77,7 @@ public class SinglyLinkedList {
 		return list; // return the updates list
 	}
 
-	// search
+	// search based on index 
 	public static int search(SinglyLinkedList list, int element) {
 		if (list.head == null) {
 			return -1;
