@@ -18,10 +18,9 @@ public class SinglyLinkedList {
 		// create new node
 		Node new_node = new Node(data);
 
-		if (list.head == null && index == 0) {
-			new_node.next = list.head; // sets the next pointer of the new node to the current head of the list.
-										// Essentially, it links the new node to the existing list.
-			list.head = new_node; // set newNode to head
+		if (list.head == null && index == 0) { 
+			new_node.next = list.head; //  sets the next pointer of the new node to the current head of the list. Essentially, it links the new node to the existing list.
+			list.head = new_node;	// set newNode to head 
 			System.out.println("At index " + index + " inserted " + data);
 			return list;
 		}
@@ -30,15 +29,14 @@ public class SinglyLinkedList {
 		Node prev = null;
 		int counter = 0;
 		while (currNode != null && counter < index) {
-			prev = currNode; // prev node updated to currNode
-			currNode = currNode.next; // currNode updated to next node
+			prev = currNode;	// prev node updated to currNode 
+			currNode = currNode.next;	// currNode updated to next node 
 			counter++;
 		}
 
 		new_node.next = currNode;
-		if (prev != null) { // it means the new node is not being inserted at the head, so prev.next is set
-							// to the new node.
-			prev.next = new_node; // here insert operation happens
+		if (prev != null) { // it means the new node is not being inserted at the head, so prev.next is set to the new node.
+			prev.next = new_node;	// here insert operation happens
 		}
 
 		System.out.println("At index " + index + " inserted " + data);
@@ -77,6 +75,23 @@ public class SinglyLinkedList {
 		}
 
 		return list; // return the updates list
+	}
+
+	// search
+	public static int search(SinglyLinkedList list, int element) {
+		if (list.head == null) {
+			return -1;
+		}
+		Node temp = list.head;
+		int index = 0;
+		while (temp != null) {
+			if (element == temp.data) {
+				return index;
+			}
+			index++;
+			temp = temp.next;
+		}
+		return -1;
 	}
 
 	// printing linked list
