@@ -94,15 +94,15 @@ public class SinglyLinkedList {
 	public void insertatend(int data) { // or else renamed as append method
 		Node newNode = new Node(data);
 		if (head == null) { // if the list is empty
-			newNode.nxt = head;
 			head = newNode;
+			return;
 		}
 		Node last = head;
 		while (last.nxt != null) {
 			last = last.nxt;
 		}
 		last.nxt = newNode;
-		System.out.println(newNode.data + " inserted at the end ");
+		//System.out.println(newNode.data + " inserted at the end ");
 	}
 
 	public void deleteFirstNode() {
@@ -211,12 +211,30 @@ public class SinglyLinkedList {
 		head = prev; // set the new head
 
 	}
+
 	// sort
-
+	public void sortLinkedList() {
+		System.out.println("sorted linked list ");
+		if (head == null) {
+			System.out.println("List is empty");
+			return;
+		}
+		Node currNode, index;
+		for (currNode = head; currNode != null; currNode = currNode.nxt) {
+			for (index = currNode.nxt; index != null; index = index.nxt) {
+				if (currNode.data > index.data) {
+					int temp = currNode.data;
+					currNode.data = index.data;
+					index.data = temp;
+				}
+			}
+		}
+	}
+	
 	// merge
-
+	
 	// split
-
+	
 	public void printlist() {
 		Node temp = head;
 		System.out.print("Linked List: ");
@@ -295,5 +313,29 @@ public class SinglyLinkedList {
 		list.reverseLinkedList();
 		list.printlist();
 		System.out.println();
+
+		list.sortLinkedList();
+		list.printlist();
+		System.out.println();
+		
+		// list 1
+		System.out.println("list 1 : ");
+		list.printlist();
+		
+		 // make list 2 
+	    SinglyLinkedList list2 = new SinglyLinkedList();
+	    list2.insertatend(60);
+	    list2.insertatend(70);
+	    list2.insertatend(80);
+	    list2.insertatend(90);
+	    System.out.println("list 2 : ");
+	    list2.printlist();
+		
+	
+
+		 
+		// merge 
+		
+		// split the merged list
 	}
 }
