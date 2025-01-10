@@ -2,6 +2,12 @@
 
 ## Sorting Algorithms
 - Bubble sort
+```
+0 to n-1
+  0 to n-i-1
+    if(a[i]==b[i]
+    // swap
+```
 - Selection sort
 - Insertion sort
 - Merge sort
