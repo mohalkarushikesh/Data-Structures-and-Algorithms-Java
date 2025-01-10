@@ -102,7 +102,7 @@ public class SinglyLinkedList {
 			last = last.nxt;
 		}
 		last.nxt = newNode;
-		//System.out.println(newNode.data + " inserted at the end ");
+		// System.out.println(newNode.data + " inserted at the end ");
 	}
 
 	public void deleteFirstNode() {
@@ -230,11 +230,58 @@ public class SinglyLinkedList {
 			}
 		}
 	}
-	
+
 	// merge
-	
+	public static SinglyLinkedList mergeLinkedList(SinglyLinkedList list, SinglyLinkedList list2) {
+		SinglyLinkedList mergelist = new SinglyLinkedList();
+		Node current1 = list.head; // pointer 1
+		Node current2 = list2.head; // pointer 2
+
+		while (current1 != null && current2 != null) {
+			if (current1.data <= current2.data) {
+				mergelist.insertatend(current1.data);
+				current1 = current1.nxt;
+			} else {
+				mergelist.insertatend(current2.data);
+				current2 = current2.nxt;
+			}
+		}
+		while (current1 != null) {
+			mergelist.insertatend(current1.data);
+			current1 = current1.nxt;
+		}
+		while (current2 != null) {
+			mergelist.insertatend(current2.data);
+			current2 = current2.nxt;
+		}
+
+		return mergelist;
+	}
+
 	// split
-	
+	public SinglyLinkedList[] splitLinkedList() {
+		SinglyLinkedList[] lists = new SinglyLinkedList[2]; // split linked list into two
+		lists[0] = new SinglyLinkedList();
+		lists[1] = new SinglyLinkedList();
+
+		Node fast = head, slow = head; // pointers
+
+		while (fast != null && fast.nxt != null) { // When fast reaches the end of the list, slow will be at the middle.
+			fast = fast.nxt.nxt;
+			slow = slow.nxt;
+		}
+		lists[0].head = head; // means lists[0] contains the first half of the list // lists[0] starts from
+								// the beginning of the original list.
+		lists[1].head = slow.nxt; // means lists[1] contains the second half of the list // so lists[1] starts
+									// from the middle of the original list.
+		slow.nxt = null; // slow.nxt is set to null to break the link between the two halves.
+		// By setting the heads and breaking the link, you’re effectively
+		// creating two new lists without needing to move nodes around manually. The
+		// nodes are already in place; you’re just reassigning the starting points and
+		// breaking the connection between the two halves.
+		return lists;
+	}
+
 	public void printlist() {
 		Node temp = head;
 		System.out.print("Linked List: ");
@@ -317,25 +364,32 @@ public class SinglyLinkedList {
 		list.sortLinkedList();
 		list.printlist();
 		System.out.println();
-		
+
 		// list 1
 		System.out.println("list 1 : ");
 		list.printlist();
-		
-		 // make list 2 
-	    SinglyLinkedList list2 = new SinglyLinkedList();
-	    list2.insertatend(60);
-	    list2.insertatend(70);
-	    list2.insertatend(80);
-	    list2.insertatend(90);
-	    System.out.println("list 2 : ");
-	    list2.printlist();
-		
-	
 
-		 
-		// merge 
-		
+		// make list 2
+		SinglyLinkedList list2 = new SinglyLinkedList();
+		list2.insertatend(60);
+		list2.insertatend(70);
+		list2.insertatend(80);
+		list2.insertatend(90);
+		System.out.println("list 2 : ");
+		list2.printlist();
+
+		// merge
+		SinglyLinkedList mergelist = mergeLinkedList(list, list2);
+		System.out.println("Merged Linked List ");
+		mergelist.printlist();
+		System.out.println();
+
 		// split the merged list
+		SinglyLinkedList[] lists = mergelist.splitLinkedList();
+		System.out.println("split list 1 ");
+		lists[0].printlist();
+		System.out.println("split list 2 ");
+		lists[1].printlist();
+
 	}
 }
