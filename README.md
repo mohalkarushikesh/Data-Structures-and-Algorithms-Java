@@ -11,8 +11,8 @@
 - Selection sort
 ```
 0 to n-1
+  min = i // find min
   i+1 to n-1
-    min = i // find min
     if(a[j]<arr[min]
     min = j
   //swap a[i], a[min]
