@@ -6,7 +6,7 @@
 0 to n-1
   0 to n-i-1
     if(a[i]==b[i]
-    // swap
+      swap
 ```
 - Selection sort
 ```
@@ -15,9 +15,18 @@
   i+1 to n-1
     if(a[j]<arr[min]
     min = j
-  //swap a[i], a[min]
+  swap a[i], a[min]
 ```
 - Insertion sort
+```
+1 to n
+  temp = a[i]
+  j = i-1
+  while(j>=0 && arr[j]>temp)
+    a[j+1]=a[j]
+    j--
+  a[j+1]=temp
+```
 - Merge sort
 - Quick sort
 
