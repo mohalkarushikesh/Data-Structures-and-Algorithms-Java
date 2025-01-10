@@ -159,9 +159,41 @@ public class SinglyLinkedList {
 		return -1;
 	}
 
-	public static void searchByValue() {
+	public void deleteByValue(int key) {
+		Node temp = head, prev = null;
+		if (head == null) {
+			System.out.println("List is empty");
+			return;
+		}
+		if (temp != null && temp.data == key) {
+			head = temp.nxt;
+			System.out.println(temp.data + " i.e key found at head (RIP)");
+			return;
+		}
+		while (temp != null && temp.data != key) {
+			prev = temp;
+			temp = temp.nxt;
+		}
+		if (temp == null) {
+			System.out.println("key is not found");
+			return;
+		}
+		if (prev != null) {
+			prev.nxt = temp.nxt;
+			System.out.println("RIP to " + temp.data);
+		}
 
 	}
+
+	// length
+
+	// reverse
+
+	// sort
+
+	// merge
+
+	// split
 
 	public void printlist() {
 		Node temp = head;
@@ -227,6 +259,10 @@ public class SinglyLinkedList {
 		} else {
 			System.out.println("Element found at index " + index);
 		}
+		list.printlist();
+		System.out.println();
+
+		list.deleteByValue(60);
 		list.printlist();
 		System.out.println();
 	}
