@@ -186,9 +186,31 @@ public class SinglyLinkedList {
 	}
 
 	// length
+	public void getListLength() {
+		int length = 0;
+		Node currNode = head;
+		while (currNode != null) {
+			length++;
+			currNode = currNode.nxt;
+		}
+		System.out.println("Length of the list: " + length);
+	}
 
 	// reverse
+	public void reverseLinkedList() {
+		Node next = null;
+		Node currNode = head;
+		Node prev = null;
+		System.out.println("Reversed Linked List");
+		while (currNode != null) {
+			next = currNode.nxt; // store curr nodes next
+			currNode.nxt = prev; // reverse the pointer
+			prev = currNode; // update the prev
+			currNode = next; // update the currNode
+		}
+		head = prev; // set the new head
 
+	}
 	// sort
 
 	// merge
@@ -263,6 +285,14 @@ public class SinglyLinkedList {
 		System.out.println();
 
 		list.deleteByValue(60);
+		list.printlist();
+		System.out.println();
+
+		list.getListLength();
+		list.printlist();
+		System.out.println();
+
+		list.reverseLinkedList();
 		list.printlist();
 		System.out.println();
 	}
