@@ -32,7 +32,25 @@
 
 ## Searching Algorithms
 - Binary Search
+```
+n=a.length
+start=0
+end=n-1
+while(start<=end)
+mid=start+(end-start)/2
+  if(a[mid]==k)
+    return mid
+  else if(a[mid]>k)
+    start=mid-1
+  else
+    end=a[mid]+1
+```
 - Linear Search
+```
+for 0 to n
+  if(ar[i]==k)
+    return i
+```
 
 ## Array
 
