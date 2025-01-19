@@ -9,53 +9,54 @@ Recursively apply the same process to the sub-lists.
 Visualization: Imagine picking a pivot and sorting elements around it, like organizing books on a shelf by size.
 */
 // Quick sort : 
-//quick()
-//  if(end<=start) return; //base condition
-//  updated pivot=partition()
-//  quicksort(arr, start, pivot-1)
-//  quicksort(arr, pivot+1,end)
-//
-// recursion()
-// pivot = end
-// i = start - 1
-// for ( j to n)
-// if j < pivot
-//      i++
-//      swap arr[i],arr[j]
-// i++ // increase i 
-// swap pivot,arr[i]
 
-public class QuickSort {
-    public static void main(String[] args) {
-      int arr[] = {4, 1, 55, 32, 44 ,776, 64, 77, 99};
-      quicksort(arr, 0, arr.length-1);
-      for(int i: arr){
-        System.out.print(i+" ");
-      }
-  }
-  public static void quicksort(int arr[], int start, int end){
-    if(end<=start){ return; } // base condition
-    int pivot = partition(arr, start, end); // updated pivot
-    quicksort(arr, start, pivot-1); // recursive call : left partition
-    quicksort(arr, pivot+1, end);// recursive call right partition
-  }
-  public static int partition(int arr[], int start, int end){
-    int pivot = arr[end]; // pivot element last element in arr
-    int i = start - 1; 	// -1 position
-    for(int j=start; j<=end-1;j++){
-      if(arr[j] < pivot){
-        i++;
-        int temp=arr[i]; // swap i = j
-        arr[i]=arr[j];
-        arr[j]=temp;
-      }
-    }
-    i++; // increment i ie. i+1 to move swap pivot 
-    int temp=arr[i]; // swap pivot with i+1
-    arr[i]=arr[end];
-    arr[end]=temp;
-    return i; // updated pivot element base on this partition takes place 
-  }
+
+package sortingAlgorithms;
+
+public class Temp {
+
+	// Method to perform QuickSort on the array
+	public static void quicksort(int arr[], int start, int end) {
+		if (start < end) {
+			// Find the partition index
+			int partitionIndex = partition(arr, start, end);
+			// Recursively sort elements before and after partition
+			quicksort(arr, start, partitionIndex - 1);
+			quicksort(arr, partitionIndex + 1, end);
+		}
+	}
+
+	// Method to partition the array and return the partition index
+	public static int partition(int arr[], int start, int end) {
+		int pivot = arr[end]; // Choose the last element as pivot
+		int partitionIndex = start; // Initial partition index
+		for (int i = start; i < end; i++) {
+			if (arr[i] < pivot) {
+				// Swap if element is less than pivot
+				swap(arr, i, partitionIndex);
+				partitionIndex++;
+			}
+		}
+		// Swap the pivot element with the element at the partition index
+		swap(arr, partitionIndex, end);
+		return partitionIndex;
+	}
+
+	// Method to swap two elements in the array
+	static void swap(int arr[], int i, int j) {
+		int temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+
+	public static void main(String[] args) {
+		int arr[] = { 33, 29, 5, 11, 67, 55, 22, 44, 24, 77, 0 };
+		
+		int end = arr.length - 1;
+		// Call QuickSort on the array
+		quicksort(arr, 0, end);
+
+		// Print the sorted array
+		System.out.println("Sorted array: " + java.util.Arrays.toString(arr));
+	}
 }
-
-
