@@ -1,6 +1,6 @@
-package LinkedList;
+package LinkedList.SLL;
 
-public class SLL_Insertion {
+public class Insertion {
 	Node head;
 
 	static class Node { // inner class made static so the main method can access it
@@ -14,7 +14,7 @@ public class SLL_Insertion {
 		}
 	}
 
-	public static SLL_Insertion insert(SLL_Insertion list, int data) {
+	public static Insertion insert(Insertion list, int data) {
 		// create node
 		Node newNode = new Node(data);
 
@@ -35,7 +35,7 @@ public class SLL_Insertion {
 		return list;
 	}
 
-	public static void printlist(SLL_Insertion list) {
+	public static void printlist(Insertion list) {
 		Node currNode = list.head;
 
 		System.out.print("Singly LL ");
@@ -50,7 +50,7 @@ public class SLL_Insertion {
 
 		// 10 20 30 40 50
 
-		SLL_Insertion list = new SLL_Insertion();
+		Insertion list = new Insertion();
 		insert(list, 10);
 		insert(list, 20);
 		insert(list, 30);
