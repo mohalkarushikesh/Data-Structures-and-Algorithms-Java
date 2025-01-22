@@ -1,8 +1,8 @@
-package LinkedList;
+package LinkedList.SLL;
 
-import LinkedList.SLL_Insertion.Node;
+import LinkedList.SLL.Insertion.Node;
 
-public class SLL_Deletion {
+public class Deletion {
 
 	Node head;
 
@@ -17,7 +17,7 @@ public class SLL_Deletion {
 		}
 	}
 
-	public static SLL_Deletion insert(SLL_Deletion list, int data) {
+	public static Deletion insert(Deletion list, int data) {
 		// create node
 		Node newNode = new Node(data);
 
@@ -38,7 +38,7 @@ public class SLL_Deletion {
 		return list;
 	}
 
-	public static SLL_Deletion delete(SLL_Deletion list, int element) {
+	public static Deletion delete(Deletion list, int element) {
 
 		Node currNode = list.head;
 		Node prev = null;
@@ -70,7 +70,7 @@ public class SLL_Deletion {
 		return list;
 	}
 
-	public static void printlist(SLL_Deletion list) {
+	public static void printlist(Deletion list) {
 		Node currNode = list.head;
 
 		System.out.print("Singly LL ");
@@ -85,7 +85,7 @@ public class SLL_Deletion {
 
 		// 10 20 30 40 50
 
-		SLL_Deletion list = new SLL_Deletion();
+		Deletion list = new Deletion();
 		insert(list, 10);
 		insert(list, 20);
 		insert(list, 30);
