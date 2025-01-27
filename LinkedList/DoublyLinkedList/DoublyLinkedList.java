@@ -61,12 +61,33 @@ public class DoublyLinkedList {
 
 	public static DoublyLinkedList printlist(DoublyLinkedList list) {
 		Node currNode = list.head;
-		System.out.print("doubly linked list ");
+		System.out.print("doubly linked list: ");
 		while (currNode != null) {
 			System.out.print(currNode.data + " ");
 			currNode = currNode.next;
 		}
 		return list;
+	}
+
+	public static DoublyLinkedList printreverselist(DoublyLinkedList list) {
+		Node currNode = list.head;
+		// check if list is empty
+		if (list.head == null) {
+			System.out.println("list is empty");
+			return list;
+		}
+
+		while (currNode.next != null) {
+			currNode = currNode.next;
+		}
+		System.out.print("printing reverse linked list: ");
+		while (currNode != null) {
+			System.out.print(currNode.data + " ");
+			currNode = currNode.prev;
+		}
+
+		return list;
+
 	}
 
 	public static void main(String[] args) {
@@ -80,6 +101,9 @@ public class DoublyLinkedList {
 		insertatend(list, 30);
 		insertatend(list, 40);
 		printlist(list);
+
+		System.out.println();
+		printreverselist(list);
 
 	}
 }
