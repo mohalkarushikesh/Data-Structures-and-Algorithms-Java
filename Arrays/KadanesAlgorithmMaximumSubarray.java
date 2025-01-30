@@ -22,10 +22,10 @@ for( 0 to n){
 	return maxi;
 }
 
-// optimal sol
+// optimal sol/Kadane's Algorithm
 for(0 to n){
 	int sum = 0;
-	int maxi = Integer.MAX_VALUE;
+	int maxi = Integer.MIN_VALUE;
 	sum = sum + arr[i];
 	if(sum>maxi)
 		maxi = sum;
@@ -33,3 +33,23 @@ for(0 to n){
 		sum=0;
 	return maxi;
 }
+
+// print max subarray use Kadane's Algorithm
+for(0 to n)
+	int sum=0;
+	int maxi = Integer.MIN_VALUE;
+	int arrstart = -1;
+	int arrend = -1;
+	int start = 0;
+	if(sum==0)
+		start=i;
+	sum = sum + arr[i];
+	if(sum>maxi){
+		maxi=sum;
+		arrstart = start;
+		arrend=i;
+	}
+	if(sum<0)
+		sum=0;
+	sout("max subarr srt idx "+ arrstart + " end idx " + arrend);
+	return maxi;
