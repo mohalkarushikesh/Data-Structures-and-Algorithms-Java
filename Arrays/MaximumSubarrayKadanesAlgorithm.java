@@ -14,8 +14,8 @@ for(0 to n){
 // better
 int maxi = Integer.MIN_VALUE;
 for( 0 to n){
+	int sum = 0;
 	for(j=i to n){
-		int sum = 0;
 		sum = sum + arr[j];
 		maxi = Math.max(maxi, sum);
 	}
